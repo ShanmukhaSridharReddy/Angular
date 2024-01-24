@@ -1,0 +1,34 @@
+
+<div class="main">
+    <div class="for-border">
+        <div class="headings">
+            <h2 style="color:darkorange;">Fundo</h2>
+            <h2>Sign in</h2>
+            <p>Use Your Fundo Account</p>
+        </div>
+        <form [formGroup]="loginForm" >
+        <div>
+            <input class="email" placeholder="Email or Phone*" formControlName="userName"/>
+            <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+                Email is required
+            </div>
+            <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+                Invalid email format.
+            </div>
+        </div>
+        <div><input class="password" placeholder="Password*" formControlName = "password"/>
+            <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                Password is required
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('minLength') && loginForm.get('password')?.touched">
+                Password must be 6 characters long
+            </div>
+        </div>
+        <div><a style = "color: blue;">forgot Password</a></div>
+        <div class="account-login">
+            <a style = "color: blue;">create Account</a>
+            <button class="btmlogin" (click)="onSubmit()" type="submit" >Login</button>
+        </div>
+        </form>
+    </div>
+</div>

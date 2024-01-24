@@ -1,0 +1,25 @@
+<mat-dialog-content class="mat-typography">
+    <div class="text-input-cnt">
+        <input type="text" placeholder="Title " [(ngModel)]="title" />
+        <mat-icon svgIcon="pin-icon"></mat-icon>
+    </div>
+
+    <textarea placeholder="Take a note... " [(ngModel)]="desc" ></textarea>
+    
+    
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <div style="display: flex; justify-content: space-between; ">
+        <div style="display: flex; gap: 20px;">
+        <mat-icon svgIcon="reminder-icon"></mat-icon>
+        <mat-icon svgIcon="collaborator-icon"></mat-icon>
+        <mat-icon svgIcon="color-palatte-icon"></mat-icon>
+        <mat-icon svgIcon="img-icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon"></mat-icon>
+        <mat-icon svgIcon="more-icon" ></mat-icon>
+        <mat-icon svgIcon="redo-icon"></mat-icon>
+        <mat-icon svgIcon="undo-icon"></mat-icon>
+        </div>
+    </div>
+  <button mat-button (click)="handleEditNote()" cdkFocusInitial >Close</button>
+</mat-dialog-actions>

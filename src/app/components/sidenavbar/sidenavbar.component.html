@@ -1,0 +1,82 @@
+<mat-drawer-container [hasBackdrop]="true" style="width: 100%">
+  <mat-drawer #drawer [mode]="'over'" [opened]="sideBarState">
+    <div class="drawer-outer-cnt">
+      <div class="icon-label-cnt">
+        <mat-icon
+          svgIcon="note-icon"
+          aria-hidden="false"
+          aria-label="Note SVG icon"
+        ></mat-icon>
+        <span>Notes</span>
+      </div>
+      <div class="icon-label-cnt">
+        <mat-icon
+          svgIcon="reminder-icon"
+          aria-hidden="false"
+          aria-label="Note SVG icon"
+        ></mat-icon>
+        <span> Remainders</span>
+      </div>
+      <div class="icon-label-cnt">
+        <mat-icon
+          svgIcon="edit-icon"
+          aria-hidden="false"
+          aria-label="Note SVG icon"
+        ></mat-icon>
+        <span>Edit labels</span>
+      </div>
+      <div class="icon-label-cnt">
+        <mat-icon
+          svgIcon="archive-icon"
+          aria-hidden="false"
+          aria-label="Note SVG icon"
+        ></mat-icon>
+        <span>Archive</span>
+      </div>
+      <div class="icon-label-cnt">
+        <mat-icon
+          svgIcon="trash-icon"
+          aria-hidden="false"
+          aria-label="Note SVG icon"
+        ></mat-icon>
+        <span>Trash</span>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="mat-drawer-cnt">
+    <div class="drawer-outer-cnt">
+      <mat-icon
+        svgIcon="note-icon"
+        aria-hidden="false"
+        aria-label="Note SVG icon"
+        (click)="handelIconClick('/notes')"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="reminder-icon"
+        aria-hidden="false"
+        aria-label="Note SVG icon"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="edit-icon"
+        aria-hidden="false"
+        aria-label="Note SVG icon"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="archive-icon"
+        aria-hidden="false"
+        aria-label="Note SVG icon"
+        (click)="handelIconClick('/archive')"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="trash-icon"
+        aria-hidden="false"
+        aria-label="Note SVG icon"
+        (click)="handelIconClick('/trash')"
+      ></mat-icon>
+    </div>
+
+    <div class="router-outlet-cnt">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

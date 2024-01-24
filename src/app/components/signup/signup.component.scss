@@ -1,0 +1,85 @@
+.names
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    .firstname{
+        width: 200px;
+        height: 15px;
+        padding: 10px;
+    }
+    .lastname{
+        width: 200px;
+        height: 15px;
+        padding: 10px;
+    }
+    
+}
+.username
+{
+    width: 500px;
+    height: 15px;
+    padding: 10px;
+}
+.input-password{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .password{
+        width: 200px;
+        height: 15px;
+        padding: 10px;
+    }
+    .conform{
+        width: 200px;
+        height: 15px;
+        padding: 10px;
+    }
+   
+}
+.account-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.whole-page{
+   display:flex;
+   flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+   
+    margin: auto;
+    height: 100vh;
+}
+.image{
+   flex: 1;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 80px;
+}
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    //border: 2px solid gray;
+}
+.for-border{
+    display: flex;
+    border: 2px solid  gray;
+    padding-bottom: 20px;
+}
+.btmlogin{
+    background-color: blue;
+    color: white;
+}

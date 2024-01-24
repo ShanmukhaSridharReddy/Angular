@@ -1,0 +1,55 @@
+<div class="note-card-outer-cnt" [style.backgroundColor]="note.colors ? note.colors : '#ffffff' " >
+<div style="display: flex; flex-direction: column; " (click)="openDialog()">
+    <span>{{note.title}}</span>
+    <span>{{note.description}}</span>
+    </div>
+    <div class="note-card-icons" *ngIf="container !== 'trash' else trashCnt">
+        <mat-icon svgIcon="reminder-icon"></mat-icon>
+        <mat-icon svgIcon="collaborator-icon"></mat-icon>
+       
+        <button mat-button [matMenuTriggerFor]="menuclr"> <mat-icon svgIcon="color-palatte-icon" ></mat-icon></button>
+        <mat-menu #menuclr="matMenu">
+          <button style="width: 300px; display: flex; gap: 20px;" mat-menu-item>
+            <div (click)="handleColorOperation('aqua')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: aqua;"></div>
+            <div (click)="handleColorOperation('red')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: red;"></div>
+            <div (click)="handleColorOperation('blue')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: blue;"></div>
+            <div (click)="handleColorOperation('green')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color:green;"></div>
+          </button>
+          <button style="width: 300px; display: flex; gap: 20px;" mat-menu-item>
+            <div (click)="handleColorOperation('orange')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: orange;"></div>
+            <div (click)="handleColorOperation('chocolate')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: chocolate;"></div>
+            <div (click)="handleColorOperation('yellow')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: yellow;"></div>
+            <div (click)="handleColorOperation('black')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: black;"></div>
+          </button>
+          <button style="width: 300px; display: flex; gap: 20px;" mat-menu-item>
+            <div (click)="handleColorOperation('bisque')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: bisque;"></div>
+            <div (click)="handleColorOperation('gold')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: gold;"></div>
+            <div (click)="handleColorOperation('deeppink')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: deeppink;"></div>
+            <div (click)="handleColorOperation('blueviolet')" class="clr" style="width: 30px; height: 30px; border-radius: 50%; background-color: blueviolet;"></div>
+          </button>
+        </mat-menu>
+        
+        <mat-icon svgIcon="img-icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon" *ngIf="container === 'notes' else unarchive" (click)="handleNotesOperation('archive')"></mat-icon>
+        <ng-template #unarchive>
+          <mat-icon svgIcon="unarchive-icon" (click)="handleNotesOperation('archive')"></mat-icon>
+        </ng-template>
+        <mat-icon svgIcon="more-icon" [matMenuTriggerFor]="menu" > 
+
+        </mat-icon>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="handleNotesOperation('trash')">Delete</button>
+  <button mat-menu-item >Add Label</button>
+</mat-menu>
+
+    </div>
+    
+    <ng-template #trashCnt >
+      <div style="display: flex;" >
+      <mat-icon svgIcon="delete-forver-icon"></mat-icon>
+      <mat-icon svgIcon="restore-icon" (click)="handleNotesOperation('trash')"></mat-icon>
+    </div>
+        </ng-template>
+
+</div>
+

@@ -1,0 +1,48 @@
+ <div class="notes-outer-cnt">
+ <div class="Take-noteBar">
+ <div style="display: flex;width: 650px;justify-content: space-between;align-items: center;border: 1px solid black;padding: 5px 10px; border-radius: 6px; background-color: white; " (click)="toggleCreateNote()" *ngIf="toggleState else createNote">
+        <span>Take a Note...   </span>
+
+    <div style="display: flex; gap: 20px;">
+        <mat-icon svgIcon="tick-icon"></mat-icon>
+        <mat-icon svgIcon="brush-icon"></mat-icon>
+        <mat-icon svgIcon="img-icon"></mat-icon>
+    </div>
+ </div>
+
+ <ng-template class="takenote-cnt" #createNote >
+    <div class="text-input-cnt">
+        <input type="text" placeholder="Title " [(ngModel)]="title" />
+        <mat-icon svgIcon="pin-icon"></mat-icon>
+    </div>
+
+    <textarea placeholder="Take a note... " [(ngModel)]="desc" ></textarea>
+    <div style="display: flex; justify-content: space-between; ">
+        <div style="display: flex; gap: 20px;">
+        <mat-icon svgIcon="reminder-icon"></mat-icon>
+        <mat-icon svgIcon="collaborator-icon"></mat-icon>
+        <mat-icon svgIcon="color-palatte-icon"></mat-icon>
+        <mat-icon svgIcon="img-icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon"></mat-icon>
+        <mat-icon svgIcon="more-icon" ></mat-icon>
+        <mat-icon svgIcon="redo-icon"></mat-icon>
+        <mat-icon svgIcon="undo-icon"></mat-icon>
+    </div>
+        <div>
+            <button (click)="handleSaveNote()">Close</button>
+        </div>
+        </div>
+    </ng-template>
+   
+        
+ </div>
+
+<div class="notesCard-outer-cnt">
+    <div *ngFor="let note of notesList">
+        <app-note-card [note]="note" (updateNoteList)="updateNoteList($event)" [container]="'notes'"></app-note-card>
+    </div>
+
+</div>
+</div>
+
+

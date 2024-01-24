@@ -1,0 +1,51 @@
+<div class="whole-page">
+    <div class="for-border">
+      <div class="signup-container">
+        <h2 style="color: darkorange;">Fundo</h2>
+        <h3>Create Your Fundo Account</h3>
+        
+        <form [formGroup]="signupForm">
+          <div class="names">
+            <input class="firstname" placeholder="First Name*" formControlName="firstname"/>
+            <div *ngIf="signupForm.get('firstname')?.hasError('required') && signupForm.get('firstname')?.touched">
+                FirstName is required
+            </div>
+            <input class="lastname" placeholder="Last Name*" formControlName="lastname" />
+            <div *ngIf="signupForm.get('lastname')?.hasError('required') && signupForm.get('lastname')?.touched">
+                LastName is required
+            </div>
+          </div>
+          
+          <div>
+            <input class="username" placeholder="UserName*" formControlName="userName"/>
+            <div *ngIf="signupForm.get('userName')?.hasError('required') && signupForm.get('userName')?.touched">
+                UserName is required
+            </div>
+          </div>
+          <div class="input-password">
+            <input class="password" placeholder="Password*" formControlName="password"/>
+            <div *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">
+                Password is required
+            </div>
+            <div *ngIf="signupForm.get('password')?.hasError('minLength') && signupForm.get('password')?.touched">
+                Password must be 6 characters long
+            </div>
+            <input class="conform" placeholder="Confirm*" formControlName="confirmpassword"/>
+            <div *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">
+                Incorrect Password.
+            </div>
+          </div>
+          <div class="account-login">
+            <a style="color: blue;">Sign in instead</a>
+            <button class="btmlogin" (click)="onSignup()" type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+  
+      <div class="image" >
+        <img src="../../../assets/signup.jpeg">
+        <p>One Account. All of Fundo working for you</p>
+      </div>
+    </div>
+  </div>
+  
